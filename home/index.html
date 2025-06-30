@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Oregano:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Digba Ogunbiyi | Jazz Pianist</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <nav id="nav-links" class="navLinks">
+        <i class="fa fa-bars" id="hamburger"></i>
+        <i class="fa fa-xmark" id="close"></i>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="music.html">Music</a></li>
+          <li><a href="video.html">Video</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="homePage">
+      <div class="homeText">
+        <h1>Digba<br />Ogunbiyi</h1>
+        <p>
+          I’m a pianist feel free check out my music, <br />see where I’m
+          playing next, <br />or get in touch!
+        </p>
+        <div class="socials">
+          <a href="https://www.instagram.com/digbaogunbiyi/"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+          <a href="https://www.facebook.com/digbaogunbiyi/"
+            ><i class="fa-brands fa-facebook"></i
+          ></a>
+          <a href="https://www.youtube.com/@digbaogunbiyi"
+            ><i class="fa-brands fa-youtube"></i
+          ></a>
+        </div>
+      </div>
+      <div class="sideImage">
+        <img src="/home/photos/home new.png" id="defaultImage" alt="" />
+        <a href="/index.html" target="_blank" rel="noopener noreferrer">
+          <img src="/home/photos/linktree.png" alt="Visit Linktree" />
+        </a>
+        <img src="/home/photos/Group 5.png" alt="" id="changeImage" />
+        <img src="/home/photos/Group 4.png" alt="" id="changeImage2" />
+        <div class="collage">
+          <img
+            src="/home/photos/Group 1.png"
+            alt=""
+            onclick="dolike('/home/photos/home new.png')"
+          />
+          <img
+            src="/home/photos/Group 2.png"
+            alt=""
+            onclick="dolike('/home/photos/Group 5.png')"
+          />
+          <img
+            src="/home/photos/Group 3.png"
+            alt=""
+            onclick="dolike('/home/photos/Group 4.png')"
+          />
+        </div>
+      </div>
+    </div>
+    <script>
+      function dolike(images) {
+        let imagechange = document.querySelector('#defaultImage');
+
+        imagechange.setAttribute('src', images);
+
+        //   let image1 = document.getElementById('');
+        //   let image2 = document.querySelector('.sideImage > img:nth-child(3)');
+        //   let image3 = document.querySelector('.sideImage > img:nth-child(4)');
+
+        //   if (images === 'defaultImage1') {
+        //     image1.style.display = 'flex';
+        //     image2.style.display = 'none';
+        //     image3.style.display = 'none';
+        //   } else if (images === 'defaultImage2') {
+        //     image1.style.display = 'none';
+        //     image2.style.display = 'flex';
+        //     image3.style.display = 'none';
+        //   } else if (images === 'defaultImage3') {
+        //     image1.style.display = 'none';
+        //     image2.style.display = 'none';
+        //     image3.style.display = 'flex';
+        //   }
+      }
+    </script>
+    <script src="/home/index.js"></script>
+  </body>
+</html>
