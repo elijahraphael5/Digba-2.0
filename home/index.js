@@ -76,3 +76,5 @@ function highlightTodayEvent() {
 
 // Call on load
 highlightTodayEvent();
+
+// tutorial
