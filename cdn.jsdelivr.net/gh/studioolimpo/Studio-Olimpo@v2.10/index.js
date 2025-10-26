@@ -194,37 +194,63 @@ function Signature() {
 
 ////// PLAY VIDEO IN VIEWPORT //////
 
-function playVideoOnce() {
+// function playVideoOnce() {
+//   const videos = document.querySelectorAll('.g_visual_video');
+//   if (!videos.length) return;
+
+//   videos.forEach((video) => {
+//     // Skip if this clip already played (e.g. user navigated SPA pages)
+//     if (video.dataset.played === 'true') return;
+
+//     // Attempt un‑muted autoplay right away
+//     const tryPlay = video.play();
+//     if (tryPlay !== undefined) {
+//       tryPlay
+//         // Playback began: flag so we never restart it
+//         .then(() => {
+//           video.dataset.played = 'true';
+//         })
+//         // Browser blocked it (no gesture yet, iOS, etc.)
+//         .catch(() => {
+//           /* Unfortunately, modern Chrome, Safari, Edge and Firefox
+//              block *any* un‑muted autoplay unless:
+//                • the user has previously interacted with the site, OR
+//                • the site has earned a high Media Engagement Index, OR
+//                • the user explicitly allowed autoplay in browser prefs. 
+//              There is no JavaScript workaround.  :contentReference[oaicite:0]{index=0} */
+//         });
+//     }
+//   });
+// }
+
+// // Fire once after all resources are ready
+// window.addEventListener('load', playVideoOnce);
+
+function playVideosEveryTime() {
   const videos = document.querySelectorAll('.g_visual_video');
   if (!videos.length) return;
 
   videos.forEach((video) => {
-    // Skip if this clip already played (e.g. user navigated SPA pages)
-    if (video.dataset.played === 'true') return;
-
-    // Attempt un‑muted autoplay right away
+    // Always try to play (don’t check if it played before)
     const tryPlay = video.play();
+
     if (tryPlay !== undefined) {
       tryPlay
-        // Playback began: flag so we never restart it
         .then(() => {
-          video.dataset.played = 'true';
+          // Successfully playing — no need to flag it
         })
-        // Browser blocked it (no gesture yet, iOS, etc.)
         .catch(() => {
-          /* Unfortunately, modern Chrome, Safari, Edge and Firefox
-             block *any* un‑muted autoplay unless:
-               • the user has previously interacted with the site, OR
-               • the site has earned a high Media Engagement Index, OR
-               • the user explicitly allowed autoplay in browser prefs. 
-             There is no JavaScript workaround.  :contentReference[oaicite:0]{index=0} */
+          /* If autoplay fails (e.g. browser blocks unmuted autoplay),
+             you can uncomment the next line to play muted instead. */
+          // video.muted = true;
+          // video.play();
         });
     }
   });
 }
 
-// Fire once after all resources are ready
-window.addEventListener('load', playVideoOnce);
+// Run after all resources (videos, images, etc.) are loaded
+window.addEventListener('load', playVideosEveryTime);
 
 ////// CUSTOM CURSOR //////
 
