@@ -712,10 +712,12 @@ nav > ul > li > a {
   border-radius: 26px;
   border: none;
   cursor: pointer;
+  color: #ffffff;
   background-color: black;
 }
 .formSection > form > input:focus {
   outline: none;
+  color: #ffffff;
   border: none;
   background-color: #000000;
 }
@@ -724,7 +726,7 @@ nav > ul > li > a {
   height: 100px;
   background-color: #000000;
   border: none;
-  color: black;
+  color: #ffffff;
   cursor: pointer;
   border-radius: 26px;
   resize: none;
