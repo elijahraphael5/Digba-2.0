@@ -1,0 +1,160 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* font-family: "Modak", system-ui;
+  font-weight: 400;
+  font-style: normal; */
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #ffffff;
+}
+.hero {
+  min-height: 100vh;
+  width: 100%;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+}
+nav .logo {
+  color: #c8c8c8;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+nav > button {
+  padding: 8px 20px;
+  background: transparent;
+  color: #383838;
+  border: black solid 2px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+nav > button a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 500;
+}
+.album {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 40px;
+}
+.album > img {
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+  border-radius: 20px;
+  object-fit: cover;
+  filter: drop-shadow(#c8c8c8 1rem 1rem 10px);
+}
+/* CONTAINER */
+.container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* CARDS */
+.tour-card,
+.events-card {
+  width: 50%;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  color: #000;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  height: auto;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* HOVER EFFECT */
+.tour-card:hover,
+.events-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* HEADINGS */
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  color: #000;
+}
+
+/* TOUR ITEMS */
+.tour-date {
+  display: flex;
+  gap: 15px;
+  padding: 10px 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.tour-date:last-child {
+  border-bottom: none;
+}
+
+/* EVENTS ITEMS */
+.event {
+  display: flex;
+  gap: 15px;
+  padding: 10px 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.event:last-child {
+  border-bottom: none;
+}
+
+/* DATE STYLE */
+.date,
+.event span {
+  min-width: 90px;
+  font-weight: bold;
+  color: #d35400; /* subtle accent */
+}
+
+/* TEXT */
+.details p,
+.event p {
+  margin: 0;
+  font-size: 14px;
+  color: #000;
+}
+
+/* LINKS */
+.details a {
+  display: inline-block;
+  margin-top: 5px;
+  font-size: 13px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.details a:hover {
+  text-decoration: underline;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .tour-card,
+  .events-card {
+    width: 100%;
+  }
+}
