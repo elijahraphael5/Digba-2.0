@@ -43,6 +43,17 @@
     <div class="musicMenu">
       <div class="albumList">
         <div
+  class="album"
+  onclick="dolike('album99')"
+>
+  <img src="/home/photos/NewAlbum.png" alt="">
+  <div class="albumDetails">
+    <p>Digba Ogunbiyi - Stay Still</p>
+    <span>Composer - Timothy Adedigba Ogunbiyi</span><br>
+    <span>2020</span>
+  </div>
+</div>
+        <div
           class="album"
           onclick="dolike('album67')"
         ><img src="/home/photos/500x500.jpg" alt="">
@@ -73,6 +84,33 @@
       </div>
       </div>
       <div class="albumPreview">
+        <div id="album4" style="display: none;">
+  <div class="albumCover">
+    <img src="/home/photos/NewAlbum.png" alt="">
+  </div>
+  <div class="albumTracks">
+    <p>Stay Still</p>
+    <ul>
+      <li>EXTINCT MAN</li>
+      <li>OGUNJOBI (feat. Namisa Mdlalose Bizana)</li>
+      <li>Zach!</li>
+      <li>A peacemaker's lot</li>
+      <li>Òmìrán</li>
+      <li>A.O (Fading Light)</li>
+      <li>A.O (After Glow)</li>
+      <li>Roalol</li>
+      <li>Moroko</li>
+      <li>Adépèlè (feat. Temidayo Balogun)</li>
+      <li>Stay Still</li>
+    </ul>
+
+    <div class="links">
+      <button><a href="https://digbaogunbiyi.bandcamp.com/album/stay-still-2">Buy</a></button>
+      <button><a target="_blank" href="https://music.apple.com/us/album/stay-still/1889702426">Listen</a></button>
+      <!-- <a target="_blank" href="https://music.apple.com/us/album/stay-still/1889702426"><img src="/home/photos/download.png" alt=""></a> -->
+    </div>
+  </div>
+</div>
        <div id="album1" style="display: none;">
         <div class="albumCover">
           <img src="/home/photos/500x500.jpg" alt="">
@@ -142,29 +180,40 @@
 
     <script>
       function dolike(hty) {
-        var album = document.querySelector('.albumPreview');
-        
-          album.style.display = 'block';
-          var album1 = document.getElementById('album1');
-          var album2 = document.getElementById('album2');
-          var album3 = document.getElementById('album3');
-          if (hty === 'album67') {
-            album1.style.display = 'flex';
-            album2.style.display = 'none';
-            album3.style.display = 'none';
-          } else if (hty === 'albumyu') {
-            album1.style.display = 'none';
-            album2.style.display = 'flex';
-            album3.style.display = 'none';
-          } else if (hty === 'album77') {
-            album1.style.display = 'none';
-            album2.style.display = 'none';
-            album3.style.display = 'flex';
-          }
-         
-      }
+  var album = document.querySelector('.albumPreview');
+
+  album.style.display = 'block';
+
+  var album1 = document.getElementById('album1');
+  var album2 = document.getElementById('album2');
+  var album3 = document.getElementById('album3');
+  var album4 = document.getElementById('album4');
+
+  if (hty === 'album67') {
+    album1.style.display = 'flex';
+    album2.style.display = 'none';
+    album3.style.display = 'none';
+    album4.style.display = 'none';
+  } else if (hty === 'albumyu') {
+    album1.style.display = 'none';
+    album2.style.display = 'flex';
+    album3.style.display = 'none';
+    album4.style.display = 'none';
+  } else if (hty === 'album77') {
+    album1.style.display = 'none';
+    album2.style.display = 'none';
+    album3.style.display = 'flex';
+    album4.style.display = 'none';
+  } else if (hty === 'album99') {
+    album1.style.display = 'none';
+    album2.style.display = 'none';
+    album3.style.display = 'none';
+    album4.style.display = 'flex';
+  }
+}
       document.addEventListener('DOMContentLoaded', function () {
-        dolike('album67');
+        dolike('album99');
+         var album = document.querySelector('.albumPreview');
         album.style.display = 'flex';
       });
     </script>
